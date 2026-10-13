@@ -1,0 +1,17 @@
+{
+  "name": "scms-backend",
+  "version": "1.0.0",
+  "description": "Backend API สำหรับ SCMS (School Community & Grievance Management System) เชื่อมต่อ PostgreSQL ตาม database_schema_postgresql.sql",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  }
+}

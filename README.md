@@ -10,7 +10,7 @@
 
 | ER Diagram | Database ใน pgAdmin |
 |---|---|
-| ![ER Diagram](Image/เอกสารออกแบบระบบ/er-diagram.png) | ![Tables](Image/ภาพรวมของระบบ/10-pgadmin-tables.png) |
+| ![ER Diagram](Image/ERD/er-diagram.png) | ![Tables](Image/Web/10-pgadmin-tables.png) |
 
 ไฟล์ฐานข้อมูลอยู่ที่ [`database/`](database/): [`database_schema_postgresql2.sql`](database/database_schema_postgresql2.sql) (สร้างตาราง + ข้อมูลตัวอย่าง), [`migration_widen_image_columns.sql`](database/migration_widen_image_columns.sql), [`business_queries.sql`](database/business_queries.sql)
 
@@ -55,7 +55,7 @@
 
 | เข้าสู่ระบบ | สมัครสมาชิก | ฟีดชุมชน |
 |---|---|---|
-| ![Login](Image/ภาพรวมของระบบ/01-login.png) | ![Register](Image/ภาพรวมของระบบ/02-register.png) | ![Feed](Image/ภาพรวมของระบบ/03-feed.png) |
+| ![Login](Image/Web/01-login.png) | ![Register](Image/Web/02-register.png) | ![Feed](Image/Web/03-feed.png) |
 
 | รายละเอียดโพสต์ | สร้างโพสต์ใหม่ | คลังประวัติ |
 |---|---|---|
@@ -63,7 +63,7 @@
 
 | แจ้งปัญหาระบบ | แผงควบคุมแอดมิน |
 |---|---|
-| ![Report](Image/ภาพรวมของระบบ/07-report-issue.png) | ![Admin](Image/ภาพรวมของระบบ/08-admin-panel.png) |
+| ![Report](Image/Web/07-report-issue.png) | ![Admin](Image/Web/08-admin-panel.png) |
 
 ## ความสามารถของระบบ
 
@@ -254,19 +254,21 @@ Backend แปลงชื่อฟิลด์และค่า ENUM ภาษ
 ├── scms-frontend/scms-src/               # หน้าเว็บ (index.html, app.js, api.js, style.css)
 └── Image/                                # ภาพหน้าจอและ ER Diagram
 ```
-
-## ข้อจำกัดและแนวทางพัฒนา
-
-โปรเจกต์นี้เป็น prototype เพื่อการเรียนรู้ ยังไม่เหมาะกับการใช้งานจริงจนกว่าจะปรับดังนี้
-
-- รหัสผ่านเก็บเป็นข้อความธรรมดา → ควรใช้ `bcrypt`
-- ยังไม่มีระบบยืนยันตัวตนแบบ session/JWT และยังไม่ตรวจสิทธิ์ในแต่ละ endpoint ฝั่ง server
-- `History.Post_ID` ยังไม่มี `UNIQUE` ความสัมพันธ์ 1:1 จึงอาศัยการตรวจในโค้ด ควรเพิ่ม constraint ที่ฐานข้อมูล
-- รูปแนบเก็บเป็น base64 ในฐานข้อมูล ควรเปลี่ยนเป็นเก็บไฟล์แล้วบันทึกเฉพาะพาธ
-- รหัส Comment, History, Report เป็น VARCHAR ที่โค้ดสร้างเอง ควรใช้ `IDENTITY`/`SERIAL`
-
 ## ทีมผู้จัดทำ
 
 | ชื่อ | หน้าที่ |
 |---|---|
-| [ชื่อ-นามสกุล] | [หน้าที่] |
+| [นางสาว ศุภนาถ ปิ๋วสวัสดิ์ 
+ ] | [Frontend] |
+ | [นางสาว วิภาวี พรมสุข  
+ ] | [Presentation/Report] |
+ | [นางสาว ศุภนาถ ปิ๋วสวัสดิ์ 
+ ] | [Frontend] |
+ | [นางสาว พิชญธิดา พ่วงพิศ  
+ ] | [ERD/โครงสร้างฐานข้อมูลหลังบ้าน] |
+ | [นาย สายชล ยอยโพธิ์สัย
+ ] | [Bbackend/Databese] |
+ | [นาย ปฏิภาณ รักษาดี  
+ ] | [Backend/Databese] |
+ | [นาย สิทธิภัทร คำบุญมา  
+ ] | [Backend/Databese] |
